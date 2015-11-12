@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e "\033[0;32m >>> Installing nginx"
+echo -e "\033[0;32m >>> Installing nginx \033[0m"
 
 sudo add-apt-repository -y ppa:nginx/stable
 sudo apt-get update

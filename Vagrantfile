@@ -69,7 +69,7 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
 
-  # # Hostname
+  # Hostname
   config.vm.hostname = "wordstwo.dev"
 
   # hostsupdater
@@ -77,6 +77,7 @@ Vagrant.configure(2) do |config|
 
   # Provisioners
   config.vm.provision :shell, path: "provisioners/base.sh"
+  config.vm.provision :shell, path: "provisioners/ruby.sh"
   config.vm.provision :shell, path: "provisioners/nginx.sh"
   config.vm.provision :shell, path: "provisioners/site.sh"
   config.vm.provision :shell, path: "provisioners/npm_setup.sh"

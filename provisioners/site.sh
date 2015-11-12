@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e "\033[0;32m >>> Setting up site"
+echo -e "\033[0;32m >>> Setting up site \033[0m"
 
 cat <<EOF > /etc/nginx/sites-available/wordstwo
 server {
@@ -13,7 +13,7 @@ server {
     server_name wordstwo.dev;
 
     location / {
-        try_files \$uri \$uri/ =404;
+        try_files \$uri $uri.html \$uri/ =404;
     }
 
     error_page 404 /404.html;

@@ -4,7 +4,7 @@
 # that's ostensibly what all this stuff does
 # https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 
-echo -e "\033[0;32m >>> Setting up NPM"
+echo -e "\033[0;32m >>> Setting up NPM \033[0m"
 
 mkdir "${HOME}/.npm-packages"
 
