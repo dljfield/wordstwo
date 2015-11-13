@@ -2,30 +2,39 @@
 
     <div class="footer-content">
 
-        <section class="copyright">
+        <div class="footer-title">
             <h2>The Debonair</h2>
-            <p>© David Field</p>
-        </section>
 
-        <section class="social-media-list">
-            <ul>
-                {% if site.github_username %}
-                <li>
-                    {% include icon-github.html username=site.github_username %}
-                </li>
-                {% endif %}
+        </div>
 
-                {% if site.twitter_username %}
-                <li>
-                    {% include icon-twitter.html username=site.twitter_username %}
-                </li>
-                {% endif %}
-            </ul>
-        </section>
+        <div class="footer-information">
 
-        <section class="site-description">
-            <p>{{ site.description }}</p>
-        </section>
+            <section class="copyright">
+                <p>© David Field</p>
+                <a href="mailto:david@thedebonair.net">david@thedebonair.net</a>
+            </section>
+
+            <section class="social-media-list">
+                <ul>
+                    {% if site.github_username %}
+                    <li>
+                        {% include icon-github.html username=site.github_username %}
+                    </li>
+                    {% endif %}
+
+                    {% if site.twitter_username %}
+                    <li>
+                        {% include icon-twitter.html username=site.twitter_username %}
+                    </li>
+                    {% endif %}
+                </ul>
+            </section>
+
+            <section class="site-description">
+                <p>{{ site.description }}</p>
+            </section>
+
+        </div>
 
     </div>
 

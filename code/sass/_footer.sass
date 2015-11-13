@@ -7,11 +7,19 @@
     .footer-content
         +outer-container($max-width)
 
-    .copyright
-        +span-columns(4)
+    .footer-title
+        +row()
+        font-family: $base-font-family
+        letter-spacing: 0.10em
 
         h2
             font-size: 1.2em
+
+    .footer-information
+        +row()
+
+    .copyright
+        +span-columns(4)
 
         p
             margin-top: 0
@@ -35,10 +43,12 @@
 
             li
                 margin-top: 0
+                vertical-align: middle
 
             a
                 text-decoration: none
                 color: $brand-colour
+                vertical-align: middle
 
     .site-description
         +span-columns(4)
