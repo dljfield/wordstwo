@@ -1,0 +1,47 @@
+.site-footer
+    border-top: 1px solid $grey-colour
+    margin-top: 8em
+    padding: 4em 0
+    font-family: $sans-font-family
+
+    .footer-content
+        +outer-container($max-width)
+
+    .copyright
+        +span-columns(4)
+
+        h2
+            font-size: 1.2em
+
+        p
+            margin-top: 0
+
+        a
+            text-decoration: none
+            color: $brand-colour
+
+            &:hover
+                text-decoration: underline
+
+    .social-media-list
+        +span-columns(4)
+        margin-top: 0
+
+        ul
+            list-style: none
+
+            .icon>svg
+                max-width: 1em
+
+            li
+                margin-top: 0
+
+            a
+                text-decoration: none
+                color: $brand-colour
+
+    .site-description
+        +span-columns(4)
+        margin-top: 0
+
+
