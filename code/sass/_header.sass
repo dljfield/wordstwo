@@ -1,0 +1,36 @@
+.site-header
+    border-bottom: 1px solid $grey-colour
+    padding: 2em 0
+
+    nav
+        +outer-container($max-width)
+
+        h1
+            +span-columns(6)
+            font-size: 1.5em
+            letter-spacing: 0.10em
+            margin-top: 0
+
+        ul
+            +span-columns(6)
+            text-align: right
+            font-family: $sans-font-family
+            letter-spacing: 0.05em
+            text-transform: uppercase
+            list-style: none
+            line-height: 2.55em
+            margin-top: 0
+
+            li
+                display: inline-block
+                padding: 0 2em
+                margin-top: 0
+
+            a
+                text-decoration: none
+                color: $text-colour
+                transition: color ease 0.15s
+                margin-top: 0
+
+                &:hover
+                    color: $brand-colour

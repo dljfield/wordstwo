@@ -1,0 +1,60 @@
+article
+    +outer-container($max-width)
+    font-size: 1.25em
+
+    header
+        padding: 8em 0
+
+        h2
+            font-size: 1.6em
+            margin-top: 0
+            letter-spacing: 0.05em
+
+        time
+            font-family: $sans-font-family
+            font-size: $small-font-size
+
+    .post
+        +span-columns(6)
+        margin-top: 0
+        line-height: 1.7em
+
+        p+p
+            margin-top: 0.5em
+            text-indent: 1.7em
+
+        a
+            color: $brand-colour
+            text-decoration: none
+
+            &:hover
+                text-decoration: underline
+
+        ul, .post ol
+            list-style-position: outside
+
+        ul ul, .post ol ol
+            padding-left: 1.7em
+
+        li
+            margin-top: 0
+
+        code
+            font-family: $monospace-font-family
+            border: 1px solid $grey-colour
+            padding: 0.2em 0.3em
+            font-size: 0.7em
+
+        pre
+            border: 1px solid $grey-colour
+            padding: 1em 1.5em
+
+        pre>code
+            border: none
+            padding: 0
+
+    .introduction
+        font-family: $sans-font-family
+        font-size: 0.9em
+
+
