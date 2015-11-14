@@ -132,7 +132,7 @@ article {
         float: left;
         display: block;
         margin-right: 2.35765%;
-        width: 48.82117%;
+        width: 57.35098%;
         text-align: left; }
         article .post:last-child {
           margin-right: 0; } }
@@ -186,13 +186,17 @@ article {
     article .post pre > code {
       border: none;
       padding: 0; }
+    article .post hr {
+      border: 0;
+      height: 1px;
+      background-color: #eee; }
   article .introduction {
     font-family: "Lato", sans-serif;
     font-size: 0.9em; }
 
 .site-footer {
   border-top: 1px solid #eee;
-  margin-top: 8em;
+  margin-top: 4em;
   padding: 4em 0;
   font-family: "Lato", sans-serif;
   text-align: center; }
@@ -272,6 +276,40 @@ article {
       margin-top: 0; }
       .site-footer .site-description:last-child {
         margin-right: 0; } }
+
+.index {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4.35765%;
+  margin-top: 4em;
+  text-align: center; }
+  .index::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media screen and (min-width: 900px) {
+    .index {
+      text-align: left; } }
+  .index ul {
+    list-style: none; }
+  .index li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.7em; }
+  .index time {
+    font-size: 14px;
+    font-family: "Lato", sans-serif; }
+  .index h2 {
+    margin-top: 0; }
+    .index h2 a {
+      text-decoration: none;
+      color: #000;
+      letter-spacing: 0.05em;
+      font-size: 1.6em; }
+      .index h2 a:hover {
+        color: #7a0000; }
+  .index .introduction {
+    font-family: "Lato", sans-serif; }
 
 /**
  * Syntax highlighting styles
