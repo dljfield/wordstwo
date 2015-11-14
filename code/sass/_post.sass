@@ -1,32 +1,53 @@
 article
     +outer-container($max-width)
-    font-size: 1.25em
+    +pad(0 flex-gutter() + 2)
+    font-size: 1.1em
+    text-align: justify
+
+    @media screen and (min-width: $break-tablet)
+        font-size: 1.2em
 
     header
         padding: 8em 0
+        text-align: center
+
+        @media screen and (min-width: $break-laptop)
+            text-align: left
 
         h2
-            font-size: 1.6em
+            font-size: 1.4em
             margin-top: 0
             letter-spacing: 0.05em
+
+            @media screen and (min-width: $break-tablet)
+                font-size: 1.6em
 
         time
             font-family: $sans-font-family
             font-size: $small-font-size
 
     .post
-        +span-columns(6)
         margin-top: 0
-        line-height: 1.7em
+        line-height: $base-line-height - 0.1
+
+        @media screen and (min-width: $break-tablet)
+            line-height: $base-line-height
+
+        @media screen and (min-width: $break-laptop)
+            +span-columns(6)
+            text-align: left
 
         h3
             font-size: 1.2em
             font-family: $sans-font-family
-            // text-transform: none
+            text-align: center
+
+            @media screen and (min-width: $break-tablet)
+                text-align: left
 
         p+p
             margin-top: 0.5em
-            text-indent: 1.7em
+            text-indent: $base-line-height
 
         a
             color: $brand-colour
@@ -36,10 +57,16 @@ article
                 text-decoration: underline
 
         ul, .post ol
-            list-style-position: outside
+            list-style-position: inside
+
+            @media screen and (min-width: $break-tablet)
+                list-style-position: outside
 
         ul ul, .post ol ol
-            padding-left: 1.7em
+            padding-left: 1.6em
+
+            @media screen and (min-width: $break-tablet)
+                padding-left: $base-line-height
 
         li
             margin-top: 0
@@ -50,8 +77,11 @@ article
 
         blockquote
             border-left: 3px solid $grey-colour
-            padding-left: 1.7em
+            padding-left: 1.6em
             font-style: italic
+
+            @media screen and (min-width: $break-tablet)
+                padding-left: $base-line-height
 
             p
                 text-indent: 0

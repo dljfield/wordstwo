@@ -3,42 +3,44 @@
     padding: 2em 0
 
     nav
-        +outer-container($max-width-small)
-
-        @media screen and (min-width: $max-width-semi-small)
-            +outer-container($max-width-semi-small)
-
-        @media screen and (min-width: $max-width-medium)
-            +outer-container($max-width-medium)
-
-        @media screen and (min-width: $max-width-large)
-            +outer-container($max-width-large)
+        +outer-container($max-width)
+        +pad(0 flex-gutter() + 2)
 
         h1
-            font-size: 1.2em
+            font-size: 1.3em
             text-align: center
             letter-spacing: 0.10em
             margin-top: 0
 
-            @media screen and (min-width: $max-width-semi-small)
+            @media screen and (min-width: $break-tablet)
                 +span-columns(6)
                 font-size: 1.5em
+                line-height: 1.708em
+                padding-top: 0.1em
                 text-align: left
 
         ul
-            +span-columns(6)
-            text-align: right
             font-family: $sans-font-family
             letter-spacing: 0.05em
             text-transform: uppercase
             list-style: none
-            line-height: 2.55em
+            line-height: 2.563em
             margin-top: 0
+            text-align: center
+            font-size: $small-font-size
+
+            @media screen and (min-width: $break-tablet)
+                +span-columns(6)
+                text-align: right
+                font-size: $base-font-size
 
             li
                 display: inline-block
-                padding: 0 2em
+                padding: 0 1em
                 margin-top: 0
+
+                @media screen and (min-width: $break-tablet)
+                    padding: 0 2em
 
             a
                 text-decoration: none

@@ -3,23 +3,33 @@
     margin-top: 8em
     padding: 4em 0
     font-family: $sans-font-family
+    text-align: center
+
+    @media screen and (min-width: $break-laptop)
+        text-align: left
 
     .footer-content
         +outer-container($max-width)
+        +pad(0 flex-gutter() + 2)
 
     .footer-title
-        +row()
         font-family: $base-font-family
         letter-spacing: 0.10em
 
+        @media screen and (min-width: $break-laptop)
+            +row()
+
         h2
-            font-size: 1.2em
+            @media screen and (min-width: $break-laptop)
+                font-size: 1.2em
 
     .footer-information
-        +row()
+        @media screen and (min-width: $break-laptop)
+            +row()
 
     .copyright
-        +span-columns(4)
+        @media screen and (min-width: $break-laptop)
+            +span-columns(4)
 
         p
             margin-top: 0
@@ -32,8 +42,9 @@
                 text-decoration: underline
 
     .social-media-list
-        +span-columns(4)
-        margin-top: 0
+        @media screen and (min-width: $break-laptop)
+            +span-columns(4)
+            margin-top: 0
 
         ul
             list-style: none
@@ -51,7 +62,10 @@
                 vertical-align: middle
 
     .site-description
-        +span-columns(4)
-        margin-top: 0
+        @media screen and (min-width: $break-laptop)
+            +span-columns(4)
+            margin-top: 0
+
+
 
 
