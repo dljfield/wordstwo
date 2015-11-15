@@ -45,6 +45,12 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
       letter-spacing: 0.10em;
       margin-top: 0; }
+      .site-header nav h1 a {
+        color: #000;
+        text-decoration: none; }
+        .site-header nav h1 a:hover {
+          color: #000;
+          text-decoration: none; }
       @media screen and (min-width: 700px) {
         .site-header nav h1 {
           float: left;
