@@ -2,14 +2,14 @@
 layout: post
 title: My Very Own Vagrant
 date: 2015-11-16
-introduction: I've been using Homestead for a long time, but I've never actually used *Vagrant*. Magic boxes are bad practice, so I decided to figure it out.
+introduction: "I've been using Homestead for a long time, but I've never actually used <em>Vagrant</em>. Magic boxes are bad practice, so I decided to figure it out."
 ---
 
 Vagrant isn't actually very complicated in principle. The idea of typing a command and getting a virtual machine makes a lot of sense (at least to me), and the idea of provisioning it to do things you want it to do also makes a lot of sense. Indeed, pretty much everything about Vagrant makes sense.
 
 But understanding the principle and putting it into practice are two very different things. Setting up working environments for web apps can be pretty complex, especially if you're coming into that world brand new. Given the option between sitting down and working out just what to install and how to get it to do so reliably, or downloading Homestead and running `homestead up`, I know which choice appealed to me.
 
-But while solutions like Homestead are nice for getting up and running quickly, I think they miss the point in the long run. A big part of Vagrant's appeal to me is the separation of environments and the ability to more closely match what the production server is like. Homestead bundles everything into one VM, essentially just giving you the same problems you'd get running things on your host machine, except virtualised. The second issue is one that I've run into directly a couple of times, happily programming features only to find afterwards that the server doesn't run the right version of PHP, or that something just doesn't seem to work right, but—guess what—"it works on my machine."
+But while solutions like Homestead are nice for getting up and running quickly, I think they miss the point in the long run. A big part of Vagrant's appeal to me is the separation of environments and the ability to more closely match what the production server is like. Homestead bundles everything into one VM, essentially just giving you the same problems you'd get running things on your host machine, except virtualised. The second issue is one that I've run into directly a couple of times, happily programming features only to find afterwards that the server doesn't run the right version of PHP, or that something just doesn't seem to work right, but—guess what—“it works on my machine.”
 
 Even the ideal of platform independence on dev machines is scuttled with Homestead, by virtue of it being far too much of a pain to get working on Windows. I've had no trouble with such things having set up Vagrant myself, because I'm using it directly instead of through custom commands that are really only tested on Macs.
 
@@ -27,7 +27,7 @@ Still, I persevered and ended up with a simple solution that works for me. I set
 
 The first step was to decide on where, exactly, the provisioning scripts would live. I'm still not 100% sure about what I ended up with, because it seems odd to have an extra level to go down in an app's repository to get to the actual app. However, I couldn't think of anything better, so I went with this directory structure:
 
-{% highlight %}
+{% highlight bash %}
 root
     - code [where the app lives]
     - provisioners [the bash scripts]
@@ -38,7 +38,7 @@ root
 
 Inside the `provisioners` folder, I keep the various bash scripts, separated out by their job. As an example, this blog (a static site built by Jekyll, using Gulp to compile Sass), has the following provisioners:
 
-{% highlight %}
+{% highlight bash %}
 base.sh [basic stuff like timezone and language]
 gulp.sh [installing Gulp]
 nginx.sh [installing nginx]
