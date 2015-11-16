@@ -2,7 +2,7 @@
 layout: post
 title: My Very Own Vagrant
 date: 2015-11-16
-introduction: "I've been using Homestead for a long time, but I've never actually used <em>Vagrant</em>. Magic boxes are bad practice, so I decided to figure it out."
+introduction: "I've been using Homestead for a long time, but I've never actually used <em>Vagrant</em>. And, let's be honest, magic boxes are bad practice, so I decided to figure it out."
 ---
 
 Vagrant isn't actually very complicated in principle. The idea of typing a command and getting a virtual machine makes a lot of sense (at least to me), and the idea of provisioning it to do things you want it to do also makes a lot of sense. Indeed, pretty much everything about Vagrant makes sense.
@@ -13,7 +13,7 @@ But while solutions like Homestead are nice for getting up and running quickly, 
 
 Even the ideal of platform independence on dev machines is scuttled with Homestead, by virtue of it being far too much of a pain to get working on Windows. I've had no trouble with such things having set up Vagrant myself, because I'm using it directly instead of through custom commands that are really only tested on Macs.
 
-Besides, let's be honest: it's always better to understand what you're working with than it is to rely on a magic box.
+Of course, when one is faced with a problem one should figure out how to solve it. So, with a little motivation and some downtime at work, I set out to solve those problems.
 
 ### Go Go Gadget Bash Script
 
@@ -27,7 +27,7 @@ Still, I persevered and ended up with a simple solution that works for me. I set
 
 The first step was to decide on where, exactly, the provisioning scripts would live. I'm still not 100% sure about what I ended up with, because it seems odd to have an extra level to go down in an app's repository to get to the actual app. However, I couldn't think of anything better, so I went with this directory structure:
 
-{% highlight bash %}
+{% highlight text %}
 root
     - code [where the app lives]
     - provisioners [the bash scripts]
@@ -38,7 +38,7 @@ root
 
 Inside the `provisioners` folder, I keep the various bash scripts, separated out by their job. As an example, this blog (a static site built by Jekyll, using Gulp to compile Sass), has the following provisioners:
 
-{% highlight bash %}
+{% highlight text %}
 base.sh [basic stuff like timezone and language]
 gulp.sh [installing Gulp]
 nginx.sh [installing nginx]
@@ -71,6 +71,6 @@ config.hostsupdater.remove_on_suspend = false # this isn't really necessary, but
 
 And, as it turns out, that's really all there is to it! The hardest part after this is really just knowing what commands need to be run to install the tools you want to use. Luckily, there are plenty of guides available to help with this, and if you really need something tricky done at this stage then I expect Vagrant is the least of your worries.
 
-If you're anything like me then it's helpful to have an example to start with. Everything I used to set up this blog and learn how this provisioning stuff works can be found on my GitHub, specifically [here](https://github.com/dljfield/wordstwo/tree/master/provisioners). And my final note is to remember to escape your `$`'s when putting together the nginx site configuration. I caused myself headaches missing out just one damn `\`.
+Still, if you're anything like me then it's helpful to have an example to start with. Everything I used to set up this blog and learn how this provisioning stuff works can be found on my GitHub, specifically [here](https://github.com/dljfield/wordstwo/tree/master/provisioners). And my final note is to remember to escape your `$`'s when putting together the nginx site configuration. I caused myself headaches missing out just one damn `\`.
 
 I'm sure that, as I work with Vagrant in this more direct way further, I'll come across issues with what I've done and will have to change things around and resolve them. But as a step one, this has worked pretty well and I'm glad I took the time to do it. Now to figure out the best way to deploy my apps to production…
