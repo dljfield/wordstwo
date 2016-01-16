@@ -15,7 +15,9 @@ gulp.task('clean-build', function() { return del(['public/']) })
 
 gulp.task('jekyll', shell.task(['jekyll build --source ./source']));
 
-gulp.task('default', function() {
+gulp.task('live', function() {
     gulp.watch('sass/**/*.sass', ['styles']);
     gulp.watch('source/**/*', ['clean-build', 'jekyll']);
-})
+});
+
+gulp.task('default', ['styles', 'clean-build', 'jekyll', 'live']);
